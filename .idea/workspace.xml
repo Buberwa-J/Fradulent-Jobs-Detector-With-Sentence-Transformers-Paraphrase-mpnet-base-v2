@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/source/1_preliminary.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/2_data_cleaning.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/classes/cleaner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/classes/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/configurations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/embeddings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/feature_engineering_complex.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/feature_engineering_simple.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/model_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/model_training.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/notebook.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/notebook.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/1_preliminary.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/1_preliminary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/2_data_cleaning.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/2_data_cleaning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/classes/cleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/Cleaner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/classes/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/Model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/configurations.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/configurations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/embeddings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/feature_engineering_complex.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/feature_engineering_complex.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
