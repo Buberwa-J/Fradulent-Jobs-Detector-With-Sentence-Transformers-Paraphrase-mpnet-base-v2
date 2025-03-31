@@ -1,7 +1,17 @@
+import pandas as pd
+import numpy as np
+import re
+from tqdm import tqdm
+from spellchecker import SpellChecker
+from joblib import Parallel, delayed
+from sentence_transformers import SentenceTransformer
+import contractions
+from configurations import embedding_model_path
+
 # Load the dataframe from the checkpoint
 df = pd.read_csv(
     r"D:\Machine Learning Approach To Job Legitimacy Detector\Data\Checkpoint Dataframes\checkpoint_one.csv")
-df
+
 
 # # Embedd the following textual columns
 # 1. Company profile and description
@@ -13,7 +23,7 @@ df
 # In[39]:
 
 
-model_path = r'C:\Users\hp\models\paraphrase-mpnet-base-v2\models--sentence-transformers--paraphrase-mpnet-base-v2\snapshots\bef3689366be4ad4b62c8e1cec013639bea3c86a'
+model_path = embedding_model_path
 
 # Load the model from the local directory
 model = SentenceTransformer(model_path)

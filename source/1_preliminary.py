@@ -1,15 +1,9 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import re
-import unicodedata
-from nltk.corpus import words
-import textdistance
 from tqdm import tqdm
-from spellchecker import SpellChecker
 from joblib import Parallel, delayed
 from sentence_transformers import SentenceTransformer
-import contractions
 import os
 
 
