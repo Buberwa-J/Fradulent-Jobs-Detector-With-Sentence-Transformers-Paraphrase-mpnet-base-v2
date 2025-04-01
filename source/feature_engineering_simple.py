@@ -1,13 +1,6 @@
 import pandas as pd
 
 
-# # A little cleanup for the 'salary_range' column
-# 1. The <u>uncleaned df </u> has the salary_range column that is cleaner than that of the <u> semi cleaned df </u>
-# 2. Extract the minimum and the maximum salary
-
-# In[178]:
-
-
 # Step 1: Use the column from the uncleaned dataset
 df['salary_range'] = uncleaned_df['salary_range']
 
@@ -54,15 +47,6 @@ df[['is_hourly', 'is_monthly', 'is_annual']] = df['salary_max'].apply(
 df['salary_min'] = df['salary_min'].astype('float32')
 df['salary_max'] = df['salary_max'].astype('float32')
 
-# In[180]:
-
-
-df.required_education.unique()
-
-# # Engineer some features from the 'required_education' column.
-# 1. Since I have few unique values, I could just easily create a dictionary with maps. These values are also subjective so I could definately dig abit deeper
-
-# In[183]:
 
 
 education_bins = {
@@ -107,15 +91,6 @@ position_mapping = {
 
 # Map the values
 df['type_of_position_numeric'] = df['type_of_position'].map(position_mapping).astype('float16')
-
-# In[190]:
-
-
-df.type_of_contract.unique()
-
-# # Create some encoding for the type_of_contract feature. I've chosen one-hot since I don't want to risk creating something ordinal where there shouldn't be anything ordinal
-
-# In[193]:
 
 
 # Perform one-hot encoding
