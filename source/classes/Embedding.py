@@ -28,6 +28,9 @@ class Embedding:
 # 3. Nature of company
 # 4. Nature of job
 # 5. type of position
+# 6. required education
+# 7. type of contract
+
 
    # Example of the function call
 # # Clean and create embeddings for 'benefits'

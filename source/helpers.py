@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+from source.paths import datasets_path
 
 
 def load_dataframe(input_path: str):
@@ -9,10 +10,20 @@ def load_dataframe(input_path: str):
     return df
 
 
-def save_dataframe(df: pd.DataFrame, output_path: str, file_name: str):
+def save_dataframe(df: pd.DataFrame, file_name: str):
     """Saves the cleaned dataset"""
-    output_file = os.path.join(output_path, file_name)
+    output_file = os.path.join(datasets_path, file_name)
     df.to_csv(output_file, index=False)
-    print(f"Cleaned dataset saved to {output_file}")
+    print(f"{file_name} saved successfully")
 
 
+def remove_repeats(text):
+    if pd.isnull(text):
+        return text
+
+    # Remove duplicate words while maintaining order
+    words = text.split()
+    return ' '.join(dict.fromkeys(words))
+
+
+words_to_skip = {'401k', '401 k', 'k'}

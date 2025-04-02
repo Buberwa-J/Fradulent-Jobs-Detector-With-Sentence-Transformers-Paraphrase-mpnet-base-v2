@@ -4,73 +4,62 @@ import pandas as pd
 import unicodedata
 import re
 import contractions
+from tqdm import tqdm
+from joblib import Parallel, delayed
+from source.helpers import words_to_skip
+
+
+# Clean profile and description column
+def simple_cleaner(self, text):
+    if pd.isnull(text):
+        return ""
+
+    text = contractions.fix(text)  # Expand contractions
+    text = re.sub(r'[^\w\s]', '', text)  # Remove special characters
+    return text
 
 
 class Cleaner:
-    def __init__(self):
+    def __init__(self, df):
         self.spell = SpellChecker()
-        self.custom_words = {'401k', '401 k', 'k'}
+        self.custom_words = words_to_skip
         self.spell.word_frequency.load_words(self.custom_words)
-        self.english_words = set(words.words())
-        self.english_words = self.english_words.union(self.custom_words)
+        self.english_words = set(words.words()).union(self.custom_words)
+        self.df = df
 
-    # for the benefits column
+    # Clean benefits column
     def advanced_cleaner(self, text):
-        if pd.isnull(text):  # Handle NaN values
+        if pd.isnull(text):
             return ""
 
-        # Step 1: Normalize accented letters
         text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8')
+        text = re.sub(r'[^\w\s]', '', text)  # Remove special characters
+        text = re.sub(r'\s+', ' ', text).strip()  # Remove extra spaces
 
-        # Step 2: Remove special characters but keep numbers
-        text = re.sub(r'[^\w\s]', '', text)
-
-        # Step 3: Remove extra whitespace
-        text = re.sub(r'\s+', ' ', text).strip()
-
-        # Step 4: Spell-check and keep valid English words or numbers
         filtered_words = []
         for word in text.split():
-            if word.isdigit():  # Keep numbers
+            if word.isdigit():
                 filtered_words.append(word)
-            elif word in self.english_words:  # Valid English word
+            elif word in self.english_words:
                 filtered_words.append(word)
-            else:  # Attempt spell-check correction
+            else:
                 corrected_word = self.spell.correction(word)
-                if corrected_word in self.english_words:  # Check if correction is valid
+                if corrected_word in self.english_words:
                     filtered_words.append(corrected_word)
 
-        # Join the filtered words back into a string
         return ' '.join(filtered_words)
 
-    # for the combined profile and description column
-    def quick_cleaner(self, text):
-        if pd.isnull(text):  # Handle NaN values
-            return ""
+    def perform_advanced_cleaning(self):
+        print("Cleaning 'benefits' column...")
+        self.df['cleaned_benefits'] = Parallel(n_jobs=-1)(
+            delayed(self.advanced_cleaner)(text) for text in tqdm(self.df['benefits'])
+        )
+        return self.df
 
-        # Step 1: Expand contractions
-        text = contractions.fix(text)
-
-        # Step 2: Remove special characters (keep letters, numbers, and whitespace)
-        text = re.sub(r'[^\w\s]', '', text)
-
-        return text
-
-    def remove_repeats(text):
-        if pd.isnull(text):
-            return text
-
-        # Remove duplicate words while maintaining order
-        words = text.split()
-        return ' '.join(dict.fromkeys(words))
-
-
-
-
-# # Parallelized cleaning and spellchecking with tqdm progress bar
-# df['cleaned_benefits'] = Parallel(n_jobs=-1)(delayed(clean_and_filter_english)(row) for row in tqdm(df['benefits']), )
-# df.drop(columns=['company_profile_and_description'], inplace=True)
-
-
-
-
+    # Clean ONLY the profile_and_description column
+    def perform_simple_cleaning(self):
+        print("Cleaning 'profile_and_description' column...")
+        self.df['cleaned_profile_and_description'] = Parallel(n_jobs=-1)(
+            delayed(simple_cleaner)(text) for text in tqdm(self.df['profile_and_description'])
+        )
+        return self.df

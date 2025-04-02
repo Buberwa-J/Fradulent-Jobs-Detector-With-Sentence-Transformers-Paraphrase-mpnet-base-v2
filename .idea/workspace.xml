@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="Refactored 'Cleaner' class and model class; updated config file&#10;&#10;- Improved structure of 'Cleaner' class for better maintainability.&#10;- Renamed the model class and the cleaner class for better readability and intuitiveness.&#10;- Updated the configuration file to include the path to the sentence transformer.">
-      <change afterPath="$PROJECT_DIR$/source/classes/Embedding.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/classes/PreliminaryCleaner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/paths.py" afterDir="false" />
+    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="Refactored configurations file; Made a main.py source file; Made a new class for the preliminary cleaning&#10;&#10;- Split the configuration file into two files, helper.py and paths.py. These are just for readability purposes&#10;- Created main.py source file which will be responsible for running the whole pipeline including the preliminary cleaning &#10;- Created a PreliminaryCleaner.py class instead of using the procedural approach like before">
+      <change afterPath="$PROJECT_DIR$/source/classes/SalaryFeatureExtractor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/training_pipeline.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/preliminary_cleaned_df.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/1_preliminary.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/2_data_cleaning.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/2_data_cleaning.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/configurations.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/embeddings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/feature_engineering_complex.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/feature_engineering_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/feature_engineering_simple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/classes/Cleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/Cleaner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/classes/Embedding.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/Embedding.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/classes/PreliminaryCleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/PreliminaryCleaner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/feature_engineering_simple.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/paths.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,10 +60,16 @@
     "Python.preliminary.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2/source/classes",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\classes" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.training_pipeline">
     <configuration name="1_preliminary" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
@@ -89,7 +92,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="training_pipeline" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,7 +105,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/main.py" />
+      <option name="SCRIPT_NAME" value="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\training_pipeline.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -113,7 +116,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
+        <item itemvalue="Python.training_pipeline" />
         <item itemvalue="Python.1_preliminary" />
       </list>
     </recent_temporary>
@@ -150,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743439976990</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactored configurations file; Made a main.py source file; Made a new class for the preliminary cleaning&#10;&#10;- Split the configuration file into two files, helper.py and paths.py. These are just for readability purposes&#10;- Created main.py source file which will be responsible for running the whole pipeline including the preliminary cleaning &#10;- Created a PreliminaryCleaner.py class instead of using the procedural approach like before">
+      <option name="closed" value="true" />
+      <created>1743516722076</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743516722076</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,6 +177,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactored 'Cleaner' class and model class; updated config file&#10;&#10;- Improved structure of 'Cleaner' class for better maintainability.&#10;- Renamed the model class and the cleaner class for better readability and intuitiveness.&#10;- Updated the configuration file to include the path to the sentence transformer." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored 'Cleaner' class and model class; updated config file&#10;&#10;- Improved structure of 'Cleaner' class for better maintainability.&#10;- Renamed the model class and the cleaner class for better readability and intuitiveness.&#10;- Updated the configuration file to include the path to the sentence transformer." />
+    <MESSAGE value="Refactored configurations file; Made a main.py source file; Made a new class for the preliminary cleaning&#10;&#10;- Split the configuration file into two files, helper.py and paths.py. These are just for readability purposes&#10;- Created main.py source file which will be responsible for running the whole pipeline including the preliminary cleaning &#10;- Created a PreliminaryCleaner.py class instead of using the procedural approach like before" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored configurations file; Made a main.py source file; Made a new class for the preliminary cleaning&#10;&#10;- Split the configuration file into two files, helper.py and paths.py. These are just for readability purposes&#10;- Created main.py source file which will be responsible for running the whole pipeline including the preliminary cleaning &#10;- Created a PreliminaryCleaner.py class instead of using the procedural approach like before" />
   </component>
 </project>
