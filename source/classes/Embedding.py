@@ -1,39 +1,52 @@
-import  pandas as pd
-from source.paths import embedding_model_path
-from sentence_transformers import SentenceTransformer
+import pandas as pd
 import numpy as np
-import re
-
+from sentence_transformers import SentenceTransformer
+from sklearn.decomposition import PCA
+from source.helpers import save_dataframe
+from source.paths import embedding_model_path
 
 class Embedding:
-    def __init__(self):
+    def __init__(self, df, n_components=300):
+        """
+        Initializes the embedding class with a dataframe, embedding model path, and PCA component count.
+
+        :param df: The dataframe containing the text columns.
+        :param n_components: The number of PCA components to keep.
+        """
         self.model_path = embedding_model_path
         self.model = SentenceTransformer(self.model_path)
+        self.df = df
+        self.n_components = n_components  # Number of components for PCA
 
-    # Function to clean text and create embeddings
-    def clean_and_embed(self, text):
+    # Function to create embeddings for the specified columns and apply PCA
+    def embed(self, columns):
+        for column in columns:
+            print(f"Creating embeddings for '{column}' column...")
+
+            # Generate embeddings for the column
+            embeddings = self.df[column].apply(self._embed_text)
+
+            # Convert embeddings to a DataFrame
+            embeddings_df = pd.DataFrame(embeddings.tolist())
+
+            # Apply PCA to reduce the dimensionality of the embeddings
+            pca = PCA(n_components=self.n_components)
+            reduced_embeddings = pca.fit_transform(embeddings_df)
+
+            # Create a DataFrame for the reduced embeddings
+            reduced_embeddings_df = pd.DataFrame(reduced_embeddings, columns=[f"{column}_pca_{i}" for i in range(self.n_components)])
+
+            # Convert the reduced embeddings to float32 to save memory
+            reduced_embeddings_df = reduced_embeddings_df.astype('float32')
+
+            # Save the reduced embeddings using the provided save_dataframe method
+            embeddings_filename = f"{column}_embeddings_reduced.csv"
+            save_dataframe(reduced_embeddings_df, embeddings_filename, is_feature=True)
+
+    # Helper method to create embeddings for a single text
+    def _embed_text(self, text):
         if not text or pd.isnull(text):
             return np.zeros(self.model.get_sentence_embedding_dimension())
         text = str(text).lower()
-        text = re.sub(r"[^\w\s]", "", text)  # Remove punctuation
         return self.model.encode(text)
 
-
-
-
-
-# # Embedd the following textual columns
-# 1. Company profile and description
-# 2. Requirements
-# 3. Nature of company
-# 4. Nature of job
-# 5. type of position
-# 6. required education
-# 7. type of contract
-
-
-   # Example of the function call
-# # Clean and create embeddings for 'benefits'
-# df['benefits_embeddings'] = df['benefits'].progress_apply(clean_and_embed)
-# benefits_embeddings_df = pd.DataFrame(df['benefits_embeddings'].tolist()).astype('float32')
-# benefits_embeddings_df.to_csv(os.path.join(output_dir, 'benefits_embeddings.csv'), index=False)

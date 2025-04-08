@@ -1,65 +1,47 @@
-from spellchecker import SpellChecker
-from nltk.corpus import words
 import pandas as pd
 import unicodedata
 import re
 import contractions
-from tqdm import tqdm
-from joblib import Parallel, delayed
-from source.helpers import words_to_skip
-
-
-# Clean profile and description column
-def simple_cleaner(self, text):
-    if pd.isnull(text):
-        return ""
-
-    text = contractions.fix(text)  # Expand contractions
-    text = re.sub(r'[^\w\s]', '', text)  # Remove special characters
-    return text
 
 
 class Cleaner:
     def __init__(self, df):
-        self.spell = SpellChecker()
-        self.custom_words = words_to_skip
-        self.spell.word_frequency.load_words(self.custom_words)
-        self.english_words = set(words.words()).union(self.custom_words)
         self.df = df
+        self.max_word_length = 20  # words with characters more than this are not kept
 
-    # Clean benefits column
-    def advanced_cleaner(self, text):
+    def advanced_cleaner(self, text, apply_spellcheck=False):
         if pd.isnull(text):
             return ""
 
+        # Expand contractions like "don't" to "do not"
+        text = contractions.fix(text)
+
+        # Normalize unicode characters (like é → e)
         text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8')
-        text = re.sub(r'[^\w\s]', '', text)  # Remove special characters
-        text = re.sub(r'\s+', ' ', text).strip()  # Remove extra spaces
 
-        filtered_words = []
-        for word in text.split():
-            if word.isdigit():
-                filtered_words.append(word)
-            elif word in self.english_words:
-                filtered_words.append(word)
-            else:
-                corrected_word = self.spell.correction(word)
-                if corrected_word in self.english_words:
-                    filtered_words.append(corrected_word)
+        # Replace special characters with space using vectorized string operations
+        text = re.sub(r'[^\w\s]', ' ', text)
 
-        return ' '.join(filtered_words)
+        # Split text into words and filter out words that are too long
+        words = text.split()
+        filtered_words = [word for word in words if len(word) <= self.max_word_length]
 
-    def perform_advanced_cleaning(self):
-        print("Cleaning 'benefits' column...")
-        self.df['cleaned_benefits'] = Parallel(n_jobs=-1)(
-            delayed(self.advanced_cleaner)(text) for text in tqdm(self.df['benefits'])
-        )
-        return self.df
+        # Join the filtered words back into a single string
+        text = ' '.join(filtered_words)
 
-    # Clean ONLY the profile_and_description column
-    def perform_simple_cleaning(self):
-        print("Cleaning 'profile_and_description' column...")
-        self.df['cleaned_profile_and_description'] = Parallel(n_jobs=-1)(
-            delayed(simple_cleaner)(text) for text in tqdm(self.df['profile_and_description'])
-        )
+        # Normalize multiple spaces
+        text = re.sub(r'\s+', ' ', text).strip()
+
+        return text
+
+    def perform_advanced_cleaning(self, columns_to_clean):
+        for column in columns_to_clean:
+            print(f"Cleaning '{column}' column...")
+
+            # Using vectorized string operations for faster cleaning
+            self.df[f'cleaned_{column}'] = self.df[column].apply(self.advanced_cleaner)
+
+            print(f"Finished cleaning '{column}' column.\n")
+            self.df.drop(columns=column, inplace=True)
+
         return self.df

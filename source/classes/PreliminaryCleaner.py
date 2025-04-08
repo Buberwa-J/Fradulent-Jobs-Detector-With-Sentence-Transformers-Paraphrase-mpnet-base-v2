@@ -2,8 +2,6 @@ import pandas as pd
 import os
 
 
-
-
 class PreliminaryCleaner:
     def __init__(self, df: pd.DataFrame):
         self.df = df
@@ -15,7 +13,8 @@ class PreliminaryCleaner:
                                         'telecommuting', 'has_company_logo', 'has_questions'])
 
         self.df['nature_of_job'] = self.df['title'] + ' ' + self.df['function']
-        self.df.drop(columns=['title', 'function'], inplace=True)
+        self.df['company_profile_and_description'] = self.df['company_profile'] + ' ' + self.df['description']
+        self.df.drop(columns=['title', 'function', 'company_profile', 'description'], inplace=True)
 
         self.df.rename(columns={'industry': 'nature_of_company',
                                 'required_experience': 'type_of_position',

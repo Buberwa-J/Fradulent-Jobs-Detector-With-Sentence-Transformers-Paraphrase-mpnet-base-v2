@@ -35,22 +35,22 @@ class SalaryFeatureExtractor:
         self.df = df
 
     def process(self):
+        # Create a new DataFrame to hold only the extracted features related to salary
+        extracted_features_df = pd.DataFrame()
+
         # Extract the maximum and minimum salaries
-        self.df[['salary_min', 'salary_max']] = self.df['salary_range'].apply(lambda x: pd.Series(extract_min_max(x)))
+        extracted_features_df[['salary_min', 'salary_max']] = self.df['salary_range'].apply(lambda x: pd.Series(extract_min_max(x)))
 
         # Apply the function and unpack the results into new columns
-        self.df[['is_hourly', 'is_monthly', 'is_annual']] = self.df['salary_max'].apply(
+        extracted_features_df[['is_hourly', 'is_monthly', 'is_annual']] = extracted_features_df['salary_max'].apply(
             lambda x: pd.Series(determine_salary_type(x))
         )
 
         # Ensure the extracted salary columns are of float type (in case they were not properly converted)
-        self.df['salary_min'] = self.df['salary_min'].astype('float32')
-        self.df['salary_max'] = self.df['salary_max'].astype('float32')
+        extracted_features_df['salary_min'] = extracted_features_df['salary_min'].astype('float32')
+        extracted_features_df['salary_max'] = extracted_features_df['salary_max'].astype('float32')
 
-        self.df.drop(columns=['salary_range'], inplace=True)
-
-
-
+        return extracted_features_df
 
 
 

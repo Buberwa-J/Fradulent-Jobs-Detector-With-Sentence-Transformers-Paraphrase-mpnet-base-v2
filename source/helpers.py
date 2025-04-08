@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from source.paths import datasets_path
+from source.paths import datasets_path,features_path
 
 
 def load_dataframe(input_path: str):
@@ -10,9 +10,12 @@ def load_dataframe(input_path: str):
     return df
 
 
-def save_dataframe(df: pd.DataFrame, file_name: str):
-    """Saves the cleaned dataset"""
-    output_file = os.path.join(datasets_path, file_name)
+def save_dataframe(df: pd.DataFrame, file_name: str, is_feature=False):
+    """Saves the dataset"""
+    if is_feature:
+        output_file = os.path.join(features_path, file_name)
+    else:
+        output_file = os.path.join(datasets_path, file_name)
     df.to_csv(output_file, index=False)
     print(f"{file_name} saved successfully")
 
@@ -27,3 +30,5 @@ def remove_repeats(text):
 
 
 words_to_skip = {'401k', '401 k', 'k'}
+
+

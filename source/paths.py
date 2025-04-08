@@ -3,3 +3,5 @@ embedding_model_path = r'C:\Users\hp\models\paraphrase-mpnet-base-v2\models--sen
 
 original_dataframe_path = '../datasets/emscad_without_tags.csv'
 datasets_path = '../datasets'
+features_path = '../datasets/features'
+
