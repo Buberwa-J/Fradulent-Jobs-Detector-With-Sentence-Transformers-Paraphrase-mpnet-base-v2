@@ -3,8 +3,9 @@ from source.classes.PreliminaryCleaner import PreliminaryCleaner
 from source.classes.Embedding import Embedding
 from source.classes.Cleaner import Cleaner
 from source.paths import original_dataframe_path
-from source.helpers import load_dataframe, save_dataframe, remove_repeats
+from source.helpers import load_dataframe, save_dataframe, remove_repeats, do_embedding
 from source.classes.SalaryFeatureExtractor import *
+
 
 
 def main():
@@ -44,14 +45,17 @@ def main():
     save_dataframe(cleaned_dataframe, 'fully_cleaned_dataframe.csv')
     print("Textual columns cleaned successfully\n")
 
-    # Step 4: Create the sentence embeddings
-    columns_to_embed = [
-        'cleaned_requirements', 'cleaned_benefits', 'cleaned_type_of_contract', 'cleaned_type_of_position',
-        'cleaned_required_education', 'cleaned_nature_of_company', 'cleaned_nature_of_job',
-        'cleaned_company_profile_and_description'
-    ]
-    embedding = Embedding(cleaned_dataframe)
-    embedding.embed(columns_to_embed)
+    # Step 4: Create the sentence embeddings. Should only be executed once
+    if do_embedding:
+        columns_to_embed = [
+            'cleaned_requirements', 'cleaned_benefits', 'cleaned_type_of_contract', 'cleaned_type_of_position',
+            'cleaned_required_education', 'cleaned_nature_of_company', 'cleaned_nature_of_job',
+            'cleaned_company_profile_and_description'
+        ]
+        embedding = Embedding(cleaned_dataframe)
+        embedding.embed(columns_to_embed)
+
+
 
 
 if __name__ == "__main__":

@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="Refactored main.py; Modified method implementation for 1. Cleaning and 2. Saving dataframes; Extracted a class from a procedural approach feature_engineering_simple.py&#10;&#10;-Refactored: main.py is now training_pipeline.py This helps for training and inference abstraction&#10;-Modified: The cleaning methods in the Cleaner class are now more modular. This will make the inference pipeline faster&#10;-Modified: The method for saving dataframes now only takes the filename and the dataframe. The path is handled in the paths.py file. &#10;-Created: SalaryFeatureExtractor class is now used in place of the old procedural extraction of salary based features">
-      <change afterPath="$PROJECT_DIR$/source/SpellChecker.py" afterDir="false" />
+    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="Refactor and enhance data cleaning and embedding workflow&#10;&#10;- Removed the simple cleaner method; unified all cleaning logic into a single advanced cleaning function.&#10;- Extended cleaning to all relevant textual columns, not just 'benefits' and 'company_profile_and_description'.&#10;- Modified character cleaning logic to replace special characters with spaces instead of removing them entirely, preserving token separation.&#10;- Separated salary-related features into their own dedicated DataFrame for modular feature handling.&#10;- Introduced a new, optional SpellChecker class—spell checking is no longer a required step within the Cleaner class.&#10;- Added PCA dimensionality reduction to the Embedding class to reduce embedding size and improve downstream efficiency.">
+      <change afterPath="$PROJECT_DIR$/source/classes/FeatureSelector.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/model_four.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/model_one.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/model_three.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/model_two.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/classes/Cleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/Cleaner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/classes/Embedding.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/Embedding.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/classes/PreliminaryCleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/PreliminaryCleaner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/classes/SalaryFeatureExtractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/SalaryFeatureExtractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/embeddings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/model_training.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/model_training.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/paths.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/training_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/training_pipeline.py" afterDir="false" />
     </list>
@@ -56,7 +59,16 @@
   "keyToString": {
     "Python.1_preliminary.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.model_four.executor": "Run",
+    "Python.model_one.executor": "Run",
+    "Python.model_three.executor": "Run",
+    "Python.model_two.executor": "Run",
     "Python.preliminary.executor": "Run",
+    "Python.rough model.executor": "Run",
+    "Python.rough.executor": "Run",
+    "Python.rough_2.executor": "Run",
+    "Python.rough_3.executor": "Run",
+    "Python.rough_4.executor": "Run",
     "Python.training_pipeline (1).executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -69,8 +81,8 @@
       <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.training_pipeline (1)">
-    <configuration name="1_preliminary" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.rough_4">
+    <configuration name="model_four" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -79,11 +91,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\1_preliminary.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/model_four.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -92,7 +104,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="training_pipeline (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="rough model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -101,11 +113,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/training_pipeline.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/rough model.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -114,7 +126,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="training_pipeline" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="rough_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -123,11 +135,55 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\training_pipeline.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/rough_2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rough_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/rough_3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rough_4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/rough_4.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -138,9 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.training_pipeline (1)" />
-        <item itemvalue="Python.training_pipeline" />
-        <item itemvalue="Python.1_preliminary" />
+        <item itemvalue="Python.rough_4" />
+        <item itemvalue="Python.model_four" />
+        <item itemvalue="Python.rough_3" />
+        <item itemvalue="Python.rough_2" />
+        <item itemvalue="Python.rough model" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743602594597</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refactor and enhance data cleaning and embedding workflow&#10;&#10;- Removed the simple cleaner method; unified all cleaning logic into a single advanced cleaning function.&#10;- Extended cleaning to all relevant textual columns, not just 'benefits' and 'company_profile_and_description'.&#10;- Modified character cleaning logic to replace special characters with spaces instead of removing them entirely, preserving token separation.&#10;- Separated salary-related features into their own dedicated DataFrame for modular feature handling.&#10;- Introduced a new, optional SpellChecker class—spell checking is no longer a required step within the Cleaner class.&#10;- Added PCA dimensionality reduction to the Embedding class to reduce embedding size and improve downstream efficiency.">
+      <option name="closed" value="true" />
+      <created>1744137934670</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744137934670</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,6 +276,7 @@
     <MESSAGE value="Refactored 'Cleaner' class and model class; updated config file&#10;&#10;- Improved structure of 'Cleaner' class for better maintainability.&#10;- Renamed the model class and the cleaner class for better readability and intuitiveness.&#10;- Updated the configuration file to include the path to the sentence transformer." />
     <MESSAGE value="Refactored configurations file; Made a main.py source file; Made a new class for the preliminary cleaning&#10;&#10;- Split the configuration file into two files, helper.py and paths.py. These are just for readability purposes&#10;- Created main.py source file which will be responsible for running the whole pipeline including the preliminary cleaning &#10;- Created a PreliminaryCleaner.py class instead of using the procedural approach like before" />
     <MESSAGE value="Refactored main.py; Modified method implementation for 1. Cleaning and 2. Saving dataframes; Extracted a class from a procedural approach feature_engineering_simple.py&#10;&#10;-Refactored: main.py is now training_pipeline.py This helps for training and inference abstraction&#10;-Modified: The cleaning methods in the Cleaner class are now more modular. This will make the inference pipeline faster&#10;-Modified: The method for saving dataframes now only takes the filename and the dataframe. The path is handled in the paths.py file. &#10;-Created: SalaryFeatureExtractor class is now used in place of the old procedural extraction of salary based features" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored main.py; Modified method implementation for 1. Cleaning and 2. Saving dataframes; Extracted a class from a procedural approach feature_engineering_simple.py&#10;&#10;-Refactored: main.py is now training_pipeline.py This helps for training and inference abstraction&#10;-Modified: The cleaning methods in the Cleaner class are now more modular. This will make the inference pipeline faster&#10;-Modified: The method for saving dataframes now only takes the filename and the dataframe. The path is handled in the paths.py file. &#10;-Created: SalaryFeatureExtractor class is now used in place of the old procedural extraction of salary based features" />
+    <MESSAGE value="Refactor and enhance data cleaning and embedding workflow&#10;&#10;- Removed the simple cleaner method; unified all cleaning logic into a single advanced cleaning function.&#10;- Extended cleaning to all relevant textual columns, not just 'benefits' and 'company_profile_and_description'.&#10;- Modified character cleaning logic to replace special characters with spaces instead of removing them entirely, preserving token separation.&#10;- Separated salary-related features into their own dedicated DataFrame for modular feature handling.&#10;- Introduced a new, optional SpellChecker class—spell checking is no longer a required step within the Cleaner class.&#10;- Added PCA dimensionality reduction to the Embedding class to reduce embedding size and improve downstream efficiency." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor and enhance data cleaning and embedding workflow&#10;&#10;- Removed the simple cleaner method; unified all cleaning logic into a single advanced cleaning function.&#10;- Extended cleaning to all relevant textual columns, not just 'benefits' and 'company_profile_and_description'.&#10;- Modified character cleaning logic to replace special characters with spaces instead of removing them entirely, preserving token separation.&#10;- Separated salary-related features into their own dedicated DataFrame for modular feature handling.&#10;- Introduced a new, optional SpellChecker class—spell checking is no longer a required step within the Cleaner class.&#10;- Added PCA dimensionality reduction to the Embedding class to reduce embedding size and improve downstream efficiency." />
   </component>
 </project>

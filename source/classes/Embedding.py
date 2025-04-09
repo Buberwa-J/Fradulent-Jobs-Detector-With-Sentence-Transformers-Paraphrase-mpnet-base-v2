@@ -5,6 +5,7 @@ from sklearn.decomposition import PCA
 from source.helpers import save_dataframe
 from source.paths import embedding_model_path
 
+
 class Embedding:
     def __init__(self, df, n_components=300):
         """
