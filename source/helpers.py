@@ -3,13 +3,16 @@ import os
 from source.paths import datasets_path,features_path
 
 
-def load_dataframe(dataframe_name: str, is_feature=False):
+def load_dataframe(dataframe_name: str, is_feature=False, has_pca=False):
     if is_feature:
 
         if dataframe_name == 'salary':
             dataframe_name = 'salary_features_dataframe.csv'
         else:
-            dataframe_name = 'cleaned_' + dataframe_name + '_embeddings_reduced.csv'
+            if has_pca:
+                dataframe_name = 'cleaned_' + dataframe_name + '_embeddings_reduced.csv'
+            else:
+                dataframe_name = 'cleaned_' + dataframe_name + '_embeddings.csv'
 
         df = pd.read_csv(os.path.join(features_path, dataframe_name))
     else:

@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="Refactor and enhance data cleaning and embedding workflow&#10;&#10;- Removed the simple cleaner method; unified all cleaning logic into a single advanced cleaning function.&#10;- Extended cleaning to all relevant textual columns, not just 'benefits' and 'company_profile_and_description'.&#10;- Modified character cleaning logic to replace special characters with spaces instead of removing them entirely, preserving token separation.&#10;- Separated salary-related features into their own dedicated DataFrame for modular feature handling.&#10;- Introduced a new, optional SpellChecker class—spell checking is no longer a required step within the Cleaner class.&#10;- Added PCA dimensionality reduction to the Embedding class to reduce embedding size and improve downstream efficiency.">
-      <change afterPath="$PROJECT_DIR$/source/classes/FeatureSelector.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/model_four.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/model_one.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/model_three.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/model_two.py" afterDir="false" />
+    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="Implemented FeatureSelector class for easy feature manipulation and concatenation. &#10;Modified load_dataframe function to dynamically load features based on configuration. &#10;Updated dataset paths to be absolute for better portability. &#10;Made embedding process conditional based on a variable controlled in the helpers file.">
+      <change afterPath="$PROJECT_DIR$/source/models/300 dim/56_86.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/classes/Embedding.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/Embedding.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/embeddings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/embeddings.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/source/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/model_training.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/model_training.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/model_training.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/source/paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/paths.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/training_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/training_pipeline.py" afterDir="false" />
     </list>
@@ -58,6 +54,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.1_preliminary.executor": "Run",
+    "Python.56_86.executor": "Run",
+    "Python.63_85 (1).executor": "Run",
+    "Python.65_80 (1).executor": "Run",
+    "Python.65_80.executor": "Run",
+    "Python.94_57.executor": "Run",
+    "Python.complex features model (1).executor": "Run",
+    "Python.complex features.executor": "Run",
+    "Python.hyperparameter hgb.executor": "Run",
     "Python.main.executor": "Run",
     "Python.model_four.executor": "Run",
     "Python.model_one.executor": "Run",
@@ -69,20 +73,28 @@
     "Python.rough_2.executor": "Run",
     "Python.rough_3.executor": "Run",
     "Python.rough_4.executor": "Run",
+    "Python.rought (1).executor": "Run",
+    "Python.single feature second layer.executor": "Run",
+    "Python.single feature.executor": "Run",
     "Python.training_pipeline (1).executor": "Run",
+    "Python.training_pipeline.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2/source/classes",
+    "last_opened_file_path": "D:/Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2/source/models/full dim",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\full dim" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\attention" />
       <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.rough_4">
-    <configuration name="model_four" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.hyperparameter hgb">
+    <configuration name="60_87" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,11 +103,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models/full dim" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/model_four.py" />
+      <option name="SCRIPT_NAME" value="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\full dim\60_87.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -104,7 +116,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="rough model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="64_85" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -113,11 +125,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models/full dim" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/rough model.py" />
+      <option name="SCRIPT_NAME" value="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\full dim\64_85.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -126,7 +138,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="rough_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="64_85" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,11 +147,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models/full dim" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/rough_2.py" />
+      <option name="SCRIPT_NAME" value="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\full dim\64_85.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,7 +160,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="rough_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="93_55" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,11 +169,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models/full dim" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/rough_3.py" />
+      <option name="SCRIPT_NAME" value="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\full dim\93_55.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -170,7 +182,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="rough_4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="hyperparameter hgb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -179,11 +191,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models/full dim" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/rough_4.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/full dim/hyperparameter hgb.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="training_pipeline" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/training_pipeline.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -194,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.rough_4" />
-        <item itemvalue="Python.model_four" />
-        <item itemvalue="Python.rough_3" />
-        <item itemvalue="Python.rough_2" />
-        <item itemvalue="Python.rough model" />
+        <item itemvalue="Python.hyperparameter hgb" />
+        <item itemvalue="Python.64_85" />
+        <item itemvalue="Python.93_55" />
+        <item itemvalue="Python.64_85" />
+        <item itemvalue="Python.60_87" />
       </list>
     </recent_temporary>
   </component>
@@ -258,7 +292,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744137934670</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implemented FeatureSelector class for easy feature manipulation and concatenation. &#10;Modified load_dataframe function to dynamically load features based on configuration. &#10;Updated dataset paths to be absolute for better portability. &#10;Made embedding process conditional based on a variable controlled in the helpers file.">
+      <option name="closed" value="true" />
+      <created>1744231919059</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744231919059</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,6 +319,7 @@
     <MESSAGE value="Refactored configurations file; Made a main.py source file; Made a new class for the preliminary cleaning&#10;&#10;- Split the configuration file into two files, helper.py and paths.py. These are just for readability purposes&#10;- Created main.py source file which will be responsible for running the whole pipeline including the preliminary cleaning &#10;- Created a PreliminaryCleaner.py class instead of using the procedural approach like before" />
     <MESSAGE value="Refactored main.py; Modified method implementation for 1. Cleaning and 2. Saving dataframes; Extracted a class from a procedural approach feature_engineering_simple.py&#10;&#10;-Refactored: main.py is now training_pipeline.py This helps for training and inference abstraction&#10;-Modified: The cleaning methods in the Cleaner class are now more modular. This will make the inference pipeline faster&#10;-Modified: The method for saving dataframes now only takes the filename and the dataframe. The path is handled in the paths.py file. &#10;-Created: SalaryFeatureExtractor class is now used in place of the old procedural extraction of salary based features" />
     <MESSAGE value="Refactor and enhance data cleaning and embedding workflow&#10;&#10;- Removed the simple cleaner method; unified all cleaning logic into a single advanced cleaning function.&#10;- Extended cleaning to all relevant textual columns, not just 'benefits' and 'company_profile_and_description'.&#10;- Modified character cleaning logic to replace special characters with spaces instead of removing them entirely, preserving token separation.&#10;- Separated salary-related features into their own dedicated DataFrame for modular feature handling.&#10;- Introduced a new, optional SpellChecker class—spell checking is no longer a required step within the Cleaner class.&#10;- Added PCA dimensionality reduction to the Embedding class to reduce embedding size and improve downstream efficiency." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor and enhance data cleaning and embedding workflow&#10;&#10;- Removed the simple cleaner method; unified all cleaning logic into a single advanced cleaning function.&#10;- Extended cleaning to all relevant textual columns, not just 'benefits' and 'company_profile_and_description'.&#10;- Modified character cleaning logic to replace special characters with spaces instead of removing them entirely, preserving token separation.&#10;- Separated salary-related features into their own dedicated DataFrame for modular feature handling.&#10;- Introduced a new, optional SpellChecker class—spell checking is no longer a required step within the Cleaner class.&#10;- Added PCA dimensionality reduction to the Embedding class to reduce embedding size and improve downstream efficiency." />
+    <MESSAGE value="Implemented FeatureSelector class for easy feature manipulation and concatenation. &#10;Modified load_dataframe function to dynamically load features based on configuration. &#10;Updated dataset paths to be absolute for better portability. &#10;Made embedding process conditional based on a variable controlled in the helpers file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented FeatureSelector class for easy feature manipulation and concatenation. &#10;Modified load_dataframe function to dynamically load features based on configuration. &#10;Updated dataset paths to be absolute for better portability. &#10;Made embedding process conditional based on a variable controlled in the helpers file." />
   </component>
 </project>

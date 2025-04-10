@@ -2,14 +2,12 @@
 from source.classes.PreliminaryCleaner import PreliminaryCleaner
 from source.classes.Embedding import Embedding
 from source.classes.Cleaner import Cleaner
-from source.paths import original_dataframe_path
 from source.helpers import load_dataframe, save_dataframe, remove_repeats, do_embedding
 from source.classes.SalaryFeatureExtractor import *
 
 
-
 def main():
-    original_dataframe = load_dataframe(original_dataframe_path)
+    original_dataframe = load_dataframe('emscad_without_tags')
 
     print("Starting the Job Legitimacy Detector Pipeline...\n")
 
@@ -54,8 +52,6 @@ def main():
         ]
         embedding = Embedding(cleaned_dataframe)
         embedding.embed(columns_to_embed)
-
-
 
 
 if __name__ == "__main__":
