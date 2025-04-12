@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="Made PCA optional during embedding for flexible dimensionality reduction.  &#10;Implemented two-layer fraud detection architecture:  &#10;- Layer 1 for high precision trained on a subset of features&#10;- Layer 2 for high recall trained on the entire feature set">
+    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="-Refactored: file locations to keep the hierarchy consistent&#10;-Refactored: model_api.py to inference_pipeline.py&#10;-Removed: notebook.py, and other deprecated files and folders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/2_data_cleaning.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/SpellChecker.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/SpellChecker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/classes/PreliminaryCleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/PreliminaryCleaner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/model_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/inference_pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/notebook.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/classes/Embedding.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/Embedding.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/inference_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/inference_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/training_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/training_pipeline.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,64 +47,66 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.1_preliminary.executor": "Run",
-    "Python.56_86.executor": "Run",
-    "Python.60_87.executor": "Run",
-    "Python.63_85 (1).executor": "Run",
-    "Python.64_85.executor": "Run",
-    "Python.65_80 (1).executor": "Run",
-    "Python.65_80.executor": "Run",
-    "Python.70_82 using hyperparameters (1).executor": "Run",
-    "Python.93_55.executor": "Run",
-    "Python.94_57.executor": "Run",
-    "Python.96_84.executor": "Run",
-    "Python.additional features pipeline.executor": "Run",
-    "Python.complex features model (1).executor": "Run",
-    "Python.complex features.executor": "Run",
-    "Python.hyperparameter hgb.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.manual weights for 96_84 (1).executor": "Run",
-    "Python.model_four.executor": "Run",
-    "Python.model_one.executor": "Run",
-    "Python.model_three.executor": "Run",
-    "Python.model_two.executor": "Run",
-    "Python.preci-reca with class weight for base models.executor": "Run",
-    "Python.preci-recal with hyperparameters.executor": "Run",
-    "Python.preliminary.executor": "Run",
-    "Python.random forest.executor": "Run",
-    "Python.random search.executor": "Run",
-    "Python.rough model.executor": "Run",
-    "Python.rough.executor": "Run",
-    "Python.rough_2.executor": "Run",
-    "Python.rough_3.executor": "Run",
-    "Python.rough_4.executor": "Run",
-    "Python.rought (1).executor": "Run",
-    "Python.single feature second layer.executor": "Run",
-    "Python.single feature.executor": "Run",
-    "Python.training_pipeline (1).executor": "Run",
-    "Python.training_pipeline.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2/source/models/additional features",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.1_preliminary.executor&quot;: &quot;Run&quot;,
+    &quot;Python.56_86.executor&quot;: &quot;Run&quot;,
+    &quot;Python.60_87.executor&quot;: &quot;Run&quot;,
+    &quot;Python.63_85 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.64_85.executor&quot;: &quot;Run&quot;,
+    &quot;Python.65_80 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.65_80.executor&quot;: &quot;Run&quot;,
+    &quot;Python.70_82 using hyperparameters (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.93_55.executor&quot;: &quot;Run&quot;,
+    &quot;Python.94_57.executor&quot;: &quot;Run&quot;,
+    &quot;Python.96_84.executor&quot;: &quot;Run&quot;,
+    &quot;Python.additional features pipeline.executor&quot;: &quot;Run&quot;,
+    &quot;Python.complex features model (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.complex features.executor&quot;: &quot;Run&quot;,
+    &quot;Python.hgb_v1 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.hyperparameter hgb.executor&quot;: &quot;Run&quot;,
+    &quot;Python.inference_pipeline.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.manual weights for 96_84 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_four.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_one.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_three.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_two.executor&quot;: &quot;Run&quot;,
+    &quot;Python.preci-reca with class weight for base models.executor&quot;: &quot;Run&quot;,
+    &quot;Python.preci-recal with hyperparameters.executor&quot;: &quot;Run&quot;,
+    &quot;Python.preliminary.executor&quot;: &quot;Run&quot;,
+    &quot;Python.random forest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.random search.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rough model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rough.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rough_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rough_3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rough_4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rought (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.single feature second layer.executor&quot;: &quot;Run&quot;,
+    &quot;Python.single feature.executor&quot;: &quot;Run&quot;,
+    &quot;Python.training_pipeline (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.training_pipeline.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2/source/models/additional features&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\additional features" />
       <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\full dim" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\classes" />
       <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models" />
+      <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\classes" />
       <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source" />
       <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\attention" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.manual weights for 96_84 (1)">
-    <configuration name="77_87" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.inference_pipeline">
+    <configuration name="hgb_v1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,11 +115,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models/additional features" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\additional features\77_87.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/hgb_v1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -128,7 +128,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="93_55" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="hgb_v1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -141,7 +141,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/additional features/93_55.py" />
+      <option name="SCRIPT_NAME" value="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\hgb_v1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,7 +150,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="96_84" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="inference_pipeline" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,11 +159,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models/additional features" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/additional features/96_84.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/inference_pipeline.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -194,7 +194,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="manual weights for 96_84" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="rough" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -203,11 +203,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models/additional features" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\additional features\manual weights for 96_84.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/rough.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="training_pipeline" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/training_pipeline.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -218,11 +240,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.manual weights for 96_84 (1)" />
-        <item itemvalue="Python.96_84" />
-        <item itemvalue="Python.manual weights for 96_84" />
-        <item itemvalue="Python.77_87" />
-        <item itemvalue="Python.93_55" />
+        <item itemvalue="Python.inference_pipeline" />
+        <item itemvalue="Python.rough" />
+        <item itemvalue="Python.training_pipeline" />
+        <item itemvalue="Python.hgb_v1 (1)" />
+        <item itemvalue="Python.hgb_v1 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744304636658</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="-Refactored: file locations to keep the hierarchy consistent&#10;-Refactored: model_api.py to inference_pipeline.py&#10;-Removed: notebook.py, and other deprecated files and folders">
+      <option name="closed" value="true" />
+      <created>1744468497768</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744468497768</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,6 +349,7 @@
     <MESSAGE value="Refactor and enhance data cleaning and embedding workflow&#10;&#10;- Removed the simple cleaner method; unified all cleaning logic into a single advanced cleaning function.&#10;- Extended cleaning to all relevant textual columns, not just 'benefits' and 'company_profile_and_description'.&#10;- Modified character cleaning logic to replace special characters with spaces instead of removing them entirely, preserving token separation.&#10;- Separated salary-related features into their own dedicated DataFrame for modular feature handling.&#10;- Introduced a new, optional SpellChecker class—spell checking is no longer a required step within the Cleaner class.&#10;- Added PCA dimensionality reduction to the Embedding class to reduce embedding size and improve downstream efficiency." />
     <MESSAGE value="Implemented FeatureSelector class for easy feature manipulation and concatenation. &#10;Modified load_dataframe function to dynamically load features based on configuration. &#10;Updated dataset paths to be absolute for better portability. &#10;Made embedding process conditional based on a variable controlled in the helpers file." />
     <MESSAGE value="Made PCA optional during embedding for flexible dimensionality reduction.  &#10;Implemented two-layer fraud detection architecture:  &#10;- Layer 1 for high precision trained on a subset of features&#10;- Layer 2 for high recall trained on the entire feature set" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made PCA optional during embedding for flexible dimensionality reduction.  &#10;Implemented two-layer fraud detection architecture:  &#10;- Layer 1 for high precision trained on a subset of features&#10;- Layer 2 for high recall trained on the entire feature set" />
+    <MESSAGE value="-Refactored: file locations to keep the hierarchy consistent&#10;-Refactored: model_api.py to inference_pipeline.py&#10;-Removed: notebook.py, and other deprecated files and folders" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Refactored: file locations to keep the hierarchy consistent&#10;-Refactored: model_api.py to inference_pipeline.py&#10;-Removed: notebook.py, and other deprecated files and folders" />
   </component>
 </project>
