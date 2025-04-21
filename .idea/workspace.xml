@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready" />
+    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,6 +101,7 @@
       <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\full dim" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models" />
       <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\classes" />
       <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source" />
@@ -362,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745273978628</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready">
+      <option name="closed" value="true" />
+      <created>1745274080471</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1745274080471</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

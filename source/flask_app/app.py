@@ -1,5 +1,5 @@
 from flask import Flask
-from source.flask_app.inference_routes import inference_bp
+from inference_routes import inference_bp
 from flask_cors import CORS
 from waitress import serve
 
