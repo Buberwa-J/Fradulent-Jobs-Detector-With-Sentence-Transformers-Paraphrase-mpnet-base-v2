@@ -4,35 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready&#10;-Added: Files for the sentence-transformer">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/.no_exist/bef3689366be4ad4b62c8e1cec013639bea3c86a/added_tokens.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/.no_exist/bef3689366be4ad4b62c8e1cec013639bea3c86a/chat_template.jinja" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/refs/main" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/1_Pooling/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/config_sentence_transformers.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/model.safetensors" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/modules.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/sentence_bert_config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/special_tokens_map.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/tokenizer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/tokenizer_config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/vocab.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/requirements.txt" afterDir="false" />
+    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/classes/Cleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/Cleaner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/classes/Model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/classes/PreliminaryCleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/PreliminaryCleaner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/classes/SalaryFeatureExtractor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/classes/SpellChecker.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/SpellChecker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/inference_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/inference_pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/models/hgb_v1.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/models/hgb_v1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/models/two layers.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/models/two layers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/paths.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/training_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/training_pipeline.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -367,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745267160183</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready">
+      <option name="closed" value="true" />
+      <created>1745272996291</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1745272996291</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -394,6 +375,7 @@
     <MESSAGE value="-Added: All the un versioned files including emscad_without_tags.csv, hgb_classifier_v1.joblib, hgb_v1.py, inference_routes.py and two_layers" />
     <MESSAGE value="-Added: Message to show that the prediction is complete&#10;-Added: 'waitress' package for production ready server deployment" />
     <MESSAGE value="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready&#10;-Added: Files for the sentence-transformer" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready&#10;-Added: Files for the sentence-transformer" />
+    <MESSAGE value="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready" />
   </component>
 </project>
