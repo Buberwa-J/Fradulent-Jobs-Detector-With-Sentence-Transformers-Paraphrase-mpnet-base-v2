@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="-Refactored: file locations to keep the hierarchy consistent&#10;-Refactored: model_api.py to inference_pipeline.py&#10;-Removed: notebook.py, and other deprecated files and folders">
+    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="-Made a new method to for creating embeddings during inference.&#10;-Removed the salary feature completely">
+      <change afterPath="$PROJECT_DIR$/source/flask_app/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/classes/Embedding.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/Embedding.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/inference_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/inference_pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/training_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/training_pipeline.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +60,8 @@
     &quot;Python.94_57.executor&quot;: &quot;Run&quot;,
     &quot;Python.96_84.executor&quot;: &quot;Run&quot;,
     &quot;Python.additional features pipeline.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.autoencoder.executor&quot;: &quot;Run&quot;,
     &quot;Python.complex features model (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.complex features.executor&quot;: &quot;Run&quot;,
     &quot;Python.hgb_v1 (1).executor&quot;: &quot;Run&quot;,
@@ -105,8 +106,30 @@
       <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\attention" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.inference_pipeline">
-    <configuration name="hgb_v1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.app">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/flask_app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/flask_app/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="autoencoder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,29 +142,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/hgb_v1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="hgb_v1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models/additional features" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\hgb_v1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/autoencoder.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,28 +165,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/inference_pipeline.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="manual weights for 96_84 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/models/additional features" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/models/additional features/manual weights for 96_84.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -240,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app" />
         <item itemvalue="Python.inference_pipeline" />
+        <item itemvalue="Python.autoencoder" />
         <item itemvalue="Python.rough" />
         <item itemvalue="Python.training_pipeline" />
-        <item itemvalue="Python.hgb_v1 (1)" />
-        <item itemvalue="Python.hgb_v1 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -328,7 +307,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744468497768</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="-Made a new method to for creating embeddings during inference.&#10;-Removed the salary feature completely">
+      <option name="closed" value="true" />
+      <created>1744480163945</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744480163945</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -350,6 +337,7 @@
     <MESSAGE value="Implemented FeatureSelector class for easy feature manipulation and concatenation. &#10;Modified load_dataframe function to dynamically load features based on configuration. &#10;Updated dataset paths to be absolute for better portability. &#10;Made embedding process conditional based on a variable controlled in the helpers file." />
     <MESSAGE value="Made PCA optional during embedding for flexible dimensionality reduction.  &#10;Implemented two-layer fraud detection architecture:  &#10;- Layer 1 for high precision trained on a subset of features&#10;- Layer 2 for high recall trained on the entire feature set" />
     <MESSAGE value="-Refactored: file locations to keep the hierarchy consistent&#10;-Refactored: model_api.py to inference_pipeline.py&#10;-Removed: notebook.py, and other deprecated files and folders" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Refactored: file locations to keep the hierarchy consistent&#10;-Refactored: model_api.py to inference_pipeline.py&#10;-Removed: notebook.py, and other deprecated files and folders" />
+    <MESSAGE value="-Made a new method to for creating embeddings during inference.&#10;-Removed the salary feature completely" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Made a new method to for creating embeddings during inference.&#10;-Removed the salary feature completely" />
   </component>
 </project>
