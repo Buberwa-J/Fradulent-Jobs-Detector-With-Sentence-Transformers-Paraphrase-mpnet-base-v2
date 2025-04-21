@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from source.inference_pipeline import run_inference
+from inference_pipeline import run_inference
 
 inference_bp = Blueprint('inference', __name__)
 
