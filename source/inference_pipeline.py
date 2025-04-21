@@ -61,6 +61,8 @@ def run_inference(input_job_json):
     df['fraudulent_prediction'] = predictions
     df['fraud_probability'] = probabilities
 
+    print('Prediction Completed\n')
+
     return df
 
 
