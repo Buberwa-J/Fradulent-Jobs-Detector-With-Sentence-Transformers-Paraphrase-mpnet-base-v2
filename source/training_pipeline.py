@@ -3,7 +3,6 @@ from source.classes.PreliminaryCleaner import PreliminaryCleaner
 from source.classes.Embedding import Embedding
 from source.classes.Cleaner import Cleaner
 from source.helpers import load_dataframe, save_dataframe, remove_repeats, do_embedding
-from source.classes.SalaryFeatureExtractor import *
 
 
 def main():

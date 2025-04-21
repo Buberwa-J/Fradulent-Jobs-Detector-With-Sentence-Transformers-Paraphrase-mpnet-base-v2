@@ -9,7 +9,7 @@ class Cleaner:
         self.df = df
         self.max_word_length = 20  # words with characters more than this are not kept
 
-    def advanced_cleaner(self, text, apply_spellcheck=False):
+    def advanced_cleaner(self, text):
         if pd.isnull(text):
             return ""
 
@@ -38,7 +38,6 @@ class Cleaner:
         for column in columns_to_clean:
             print(f"Cleaning '{column}' column...")
 
-            # Using vectorized string operations for faster cleaning
             self.df[f'cleaned_{column}'] = self.df[column].apply(self.advanced_cleaner)
 
             print(f"Finished cleaning '{column}' column.\n")

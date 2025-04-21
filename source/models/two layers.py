@@ -1,4 +1,4 @@
-# high precision and then high recall solution
+# high precision and then high recall solution. This route could be worth exploring as an alternative to the single layer model that I went with for the final
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import HistGradientBoostingClassifier

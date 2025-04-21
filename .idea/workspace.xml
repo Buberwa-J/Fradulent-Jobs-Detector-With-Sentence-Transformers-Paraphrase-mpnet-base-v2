@@ -4,10 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="-Made a new method to for creating embeddings during inference.&#10;-Removed the salary feature completely">
-      <change afterPath="$PROJECT_DIR$/source/flask_app/app.py" afterDir="false" />
+    <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready&#10;-Added: Files for the sentence-transformer">
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/.no_exist/bef3689366be4ad4b62c8e1cec013639bea3c86a/added_tokens.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/.no_exist/bef3689366be4ad4b62c8e1cec013639bea3c86a/chat_template.jinja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/refs/main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/1_Pooling/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/config_sentence_transformers.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/model.safetensors" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/modules.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/sentence_bert_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/special_tokens_map.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/tokenizer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/tokenizer_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/models/paraphrase-mpnet-base-v2/models--sentence-transformers--paraphrase-mpnet-base-v2/snapshots/bef3689366be4ad4b62c8e1cec013639bea3c86a/vocab.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/classes/Cleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/Cleaner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/classes/Model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/classes/PreliminaryCleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/PreliminaryCleaner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/classes/SalaryFeatureExtractor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/classes/SpellChecker.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/classes/SpellChecker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/helpers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/inference_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/inference_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/models/hgb_v1.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/models/hgb_v1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/models/two layers.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/models/two layers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/paths.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/training_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/training_pipeline.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +62,9 @@
     &quot;accountId&quot;: &quot;1235e284-a847-4532-b341-e5c828e3839d&quot;
   }
 }</component>
+  <component name="NamedScopeManager">
+    <scope name="local" pattern="file[Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2]:*||file[Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2]:*/" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -106,7 +134,7 @@
       <recent name="D:\Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2\source\models\attention" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager" selected="Python.inference_pipeline">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Fradulent Jobs Detector With Sentence Transformers Paraphrase mpnet-base-v2" />
       <option name="ENV_FILES" value="" />
@@ -219,8 +247,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.app" />
         <item itemvalue="Python.inference_pipeline" />
+        <item itemvalue="Python.app" />
         <item itemvalue="Python.autoencoder" />
         <item itemvalue="Python.rough" />
         <item itemvalue="Python.training_pipeline" />
@@ -315,7 +343,31 @@
       <option name="project" value="LOCAL" />
       <updated>1744480163945</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- Added: Flask setup for the project&#10;- Modified: Model path in the inference_pipeline.py">
+      <option name="closed" value="true" />
+      <created>1745255978293</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745255978293</updated>
+    </task>
+    <task id="LOCAL-00011" summary="-Added: All the un versioned files including emscad_without_tags.csv, hgb_classifier_v1.joblib, hgb_v1.py, inference_routes.py and two_layers">
+      <option name="closed" value="true" />
+      <created>1745256295595</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1745256295595</updated>
+    </task>
+    <task id="LOCAL-00012" summary="-Added: Message to show that the prediction is complete&#10;-Added: 'waitress' package for production ready server deployment">
+      <option name="closed" value="true" />
+      <created>1745267160183</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1745267160183</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -338,6 +390,10 @@
     <MESSAGE value="Made PCA optional during embedding for flexible dimensionality reduction.  &#10;Implemented two-layer fraud detection architecture:  &#10;- Layer 1 for high precision trained on a subset of features&#10;- Layer 2 for high recall trained on the entire feature set" />
     <MESSAGE value="-Refactored: file locations to keep the hierarchy consistent&#10;-Refactored: model_api.py to inference_pipeline.py&#10;-Removed: notebook.py, and other deprecated files and folders" />
     <MESSAGE value="-Made a new method to for creating embeddings during inference.&#10;-Removed the salary feature completely" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Made a new method to for creating embeddings during inference.&#10;-Removed the salary feature completely" />
+    <MESSAGE value="- Added: Flask setup for the project&#10;- Modified: Model path in the inference_pipeline.py" />
+    <MESSAGE value="-Added: All the un versioned files including emscad_without_tags.csv, hgb_classifier_v1.joblib, hgb_v1.py, inference_routes.py and two_layers" />
+    <MESSAGE value="-Added: Message to show that the prediction is complete&#10;-Added: 'waitress' package for production ready server deployment" />
+    <MESSAGE value="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready&#10;-Added: Files for the sentence-transformer" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready&#10;-Added: Files for the sentence-transformer" />
   </component>
 </project>

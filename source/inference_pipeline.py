@@ -4,7 +4,7 @@ import joblib
 from source.classes.PreliminaryCleaner import PreliminaryCleaner
 from source.classes.Cleaner import Cleaner
 from source.classes.Embedding import Embedding
-from source.helpers import save_dataframe, remove_repeats
+from source.helpers import remove_repeats
 import pandas as pd
 import os
 

@@ -1,5 +1,4 @@
 import pandas as pd
-import os
 
 
 class PreliminaryCleaner:
@@ -11,6 +10,7 @@ class PreliminaryCleaner:
         self.df['nature_of_job'] = self.df['title'] + ' ' + self.df['function']
         self.df['company_profile_and_description'] = self.df['company_profile'] + ' ' + self.df['description']
 
+        # You could un comment this for the training pipeline but for inference only needed data is collected from the user
         # self.df.drop(columns=['title', 'function', 'company_profile', 'description', 'job_id', 'location', 'department',
         #                       'telecommuting', 'has_company_logo', 'has_questions'], inplace=True)
 

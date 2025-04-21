@@ -1,3 +1,5 @@
+# I ended up not using spell correction in the end. This could come in handy if needed at some point
+
 from spellchecker import SpellChecker
 from nltk.corpus import words
 import pandas as pd
