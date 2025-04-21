@@ -1,6 +1,10 @@
 # inference_pipeline.py
 import sys
 import os
+
+# Add the parent directory to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import joblib
 from source.classes.PreliminaryCleaner import PreliminaryCleaner
 from source.classes.Cleaner import Cleaner
@@ -8,8 +12,6 @@ from source.classes.Embedding import Embedding
 from source.helpers import remove_repeats
 import pandas as pd
 
-# Add the parent directory to sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, 'models', 'hgb_classifier_v1.joblib')
