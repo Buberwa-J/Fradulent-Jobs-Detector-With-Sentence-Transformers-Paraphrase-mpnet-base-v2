@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="982ceb60-21af-46f0-8208-f7f8e97e435b" name="Changes" comment="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/flask_app/inference_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/flask_app/inference_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/flask_app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/flask_app/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/flask_app/inference_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/flask_app/inference_routes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -407,7 +408,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745276442332</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="-Modified: Classes and scripts to make it production ready&#10;-Refactored: Classes and directories to make it cleaner and production ready">
+      <option name="closed" value="true" />
+      <created>1745312826167</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1745312826167</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
