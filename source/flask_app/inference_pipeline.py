@@ -1,20 +1,22 @@
 # inference_pipeline.py
-import sys
+
 import os
-
-# Add the parent directory to sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
+import sys
+import pandas as pd
 import joblib
+
+# Step 0: Add the project root directory to sys.path
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if PROJECT_ROOT not in sys.path:
+    sys.path.append(PROJECT_ROOT)
+
+# Now imports will work from anywhere
 from source.classes.PreliminaryCleaner import PreliminaryCleaner
 from source.classes.Cleaner import Cleaner
 from source.classes.Embedding import Embedding
 from source.helpers import remove_repeats
-import pandas as pd
 
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, 'models', 'hgb_classifier_v1.joblib')
+MODEL_PATH = os.path.join(PROJECT_ROOT, 'models', 'hgb_classifier_v1.joblib')
 
 
 def run_inference(input_job_json):
