@@ -83,7 +83,6 @@ Traditional fraud detection models often rely on keyword matching or simple stat
 ## Model Interpretability and Monitoring
 
 While the current model is highly effective, it is important to monitor its predictions in production:
-- **Model Drift:** Regularly retrain or fine-tune the model as new types of job postings and fraud patterns emerge.
 - **Bias Auditing:** Periodically audit predictions for bias, especially if deploying in sensitive or high-stakes environments.
 - **Explainability:** Consider integrating tools like LIME or SHAP to provide explanations for individual predictions, increasing trust and transparency.
 
@@ -143,7 +142,6 @@ If you use this project in your research or product, please consider citing it o
 
 ---
 
-*This project demonstrates the power of modern NLP and machine learning for real-world risk mitigation. For further collaboration, consulting, or enterprise integration, please contact the maintainer or open an issue.*
 
 ## License
 
